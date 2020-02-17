@@ -1,0 +1,68 @@
+/***********************************************
+================================================
+ Custom Bootstrap / Overwriting
+================================================
+************************************************/
+
+.container{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.center-block {float: none !important}
+
+
+//Buttons
+.btn-xs, .btn-group-xs > .btn {
+  padding: 3px 6px;
+  font-size: 9px;
+  margin-left:10px;
+  opacity: 0.7;
+
+	-webkit-transition: all .2s;
+	   -moz-transition: all .2s;
+	     -o-transition: all .2s;
+	        transition: all .2s;
+
+	&:hover{
+		opacity: 1;
+	}
+}
+
+.btn-xs.btn-editable{
+  font-size: 9px;
+  display: inline-block;
+  margin-top: -6px;
+  margin-bottom: 14px;
+  margin-right:2px;
+}
+
+.form-control {
+	border: 2px solid @input-border; //increase border
+	box-shadow: none; //remove box shadow
+	height: 45px;
+	box-shadow:none;
+	color: @text-color;
+
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+.input-group-btn .btn{
+	height: 45px;
+}
+
+.input-group, .form-group{
+    margin-bottom: 30px
+}
+
+.help-block{
+	font-size: 10px;
+	color: #aaa;
+}
+
+
+
+
+

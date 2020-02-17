@@ -1,0 +1,253 @@
+
+/* ## Slider Section ## */
+.slider-section {
+
+     // .container { padding:50px 0px; }
+
+    //Carousel Control
+    .carousel-control {
+        top: auto;
+        background-color: fade(black,30%);
+        color: white;
+        background-image: none;
+        opacity: 1;
+        text-shadow: none;
+        font-size: 16px;
+        bottom: 70%;
+        @media (min-width: 992px){
+            bottom: 36.5%;
+        }
+        width: 34px;
+        height: 69px;
+        line-height: 69px;
+
+        transition: all .5s;
+
+
+        &:hover{
+            background-color: fade(black,90%);
+        }
+
+        &.left {
+            left: 0;
+        }
+
+        &.right{
+            right: 0;
+        } 
+    } // /. carousel control
+
+
+    .carousel-caption{
+        z-index: 0; 
+        
+        text-align: left;
+        left: 0;
+        right:0;
+
+        max-height: 100%;
+
+        text-shadow: none;
+        color: @text-color;
+
+        // Enables the Caption to appear below the slider
+        position: relative;
+        padding-bottom: 0;
+
+        // Enables the Caption to appear below the slider
+        // @media (max-width: 768px){
+
+        //     .carousel-caption {
+        //         position: relative!important;
+        //         padding-bottom: 0;
+        //     }
+           
+        // }
+
+        @media (min-width: 992px){
+            position: absolute;
+            top: 18%;
+
+            padding: 20px;
+
+        }
+        @media (min-width: 1200px) {
+            top: 20%;
+
+        }
+        @media (min-width: 1450px) {
+            padding: 30px;
+        }
+        @media (min-width: 1700px){
+            top: 25%;
+        }
+
+
+
+        .content{
+
+            background: rgba(255,255,255,0.9);
+            padding: 0;
+            margin:30px 0; // right and left margin are applied by col-sm
+
+            // Include Border for Medium Desktop and Above
+            @media (min-width: 992px){
+                border: 4px solid #3c3c44;
+                border-radius: 5px;
+                padding:30px;
+            }
+
+
+            .btn{
+                display: inline-block;
+                margin-top: 10px;
+                .opacity(0.8);
+
+                &:hover{
+                    .opacity(1);
+                }
+            }
+        }
+
+        h2{
+            font-size: 2em;
+            font-weight: 600;
+            margin: 0;
+            padding-bottom: 10px;
+            color: @brand-primary;
+
+        }
+        p{
+            font-size: 1em;
+        }
+
+        // .price{
+        //     font-size:36px;
+        //     font-family: @font-text;
+        //     margin-top:240px;
+        //     display: inline-block;
+        //     float: right;
+        // }
+    }
+
+
+
+  
+} //end slider control
+
+
+
+// bakground for smaller devices
+// @media (max-width: 991px)
+// {
+//     .carousel-inner .container
+//     {
+//         padding-bottom: 30px; 
+//     }
+// }
+
+
+
+.carousel-inner
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+}
+.carousel-inner > .item
+{
+    position: relative;
+
+    display: none;
+
+    transition: .6s ease-in-out left;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img
+{
+    line-height: 1; 
+
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+@media all and (transform-3d), (-webkit-transform-3d)
+{
+    .carousel-inner > .item
+    {
+        transition: -webkit-transform .8s ease-in-out;
+        transition:         transform .8s ease-in-out;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        -webkit-perspective: 1000;
+                perspective: 1000;
+    }
+    .carousel-inner > .item.next,
+    .carousel-inner > .item.active.right
+    {
+        left: 0; 
+
+        -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+    }
+    .carousel-inner > .item.prev,
+    .carousel-inner > .item.active.left
+    {
+        left: 0; 
+
+        -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+    }
+    .carousel-inner > .item.next.left,
+    .carousel-inner > .item.prev.right,
+    .carousel-inner > .item.active
+    {
+        left: 0; 
+
+        -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+    }
+}
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev
+{
+    display: block;
+}
+.carousel-inner > .active
+{
+    left: 0;
+}
+.carousel-inner > .next,
+.carousel-inner > .prev
+{
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+}
+.carousel-inner > .next
+{
+    left: 100%;
+}
+.carousel-inner > .prev
+{
+    left: -100%;
+}
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right
+{
+    left: 0;
+}
+.carousel-inner > .active.left
+{
+    left: -100%;
+}
+.carousel-inner > .active.right
+{
+    left: 100%;
+}

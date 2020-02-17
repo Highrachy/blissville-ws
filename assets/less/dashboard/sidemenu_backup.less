@@ -1,0 +1,673 @@
+@gray-app : #f2f4f5;
+@red-app: @brand-primary;
+
+.transit
+{
+    -webkit-transition: all 3s;
+       -moz-transition: all 3s;
+         -o-transition: all 3s;
+            transition: all 3s;
+}
+
+
+
+/*****************************
+Left Panel (aside navigation)
+*****************************/
+
+aside.left-panel
+{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+    width: 230px;
+    // box-shadow:inset -5px 0px 8px rgba(0,0,0,0.3);
+    height: 100%;
+    margin-top: 75px;
+    padding: 55px 0;
+
+    border-right: 1px solid @panel-default-border;
+    /*** Left Menu ***/
+    background-color: @gray-app;
+
+	&.collapsed
+	{
+	    position: absolute;
+	    bottom: 0;
+
+	    overflow: visible !important;
+ /*** Icon View When Collapsed for Small Screen ***/
+	    @media (min-width:@screen-sm-min) {
+	    	
+	        width: 75px;
+
+	        text-align: center;
+
+	        & + .content {
+		        margin-left: 75px;
+		    }
+
+		    .user .user-profile, span.nav-label {
+		        display: none;
+		    }
+
+
+		    .navigation > ul > li > a
+		    {
+		        padding: 20px;
+		    }
+
+
+
+		    i.fa
+		    {
+		        font-size: 24px;
+		    }
+
+		    i.fa.fa-angle-right
+		    {
+		        font-size: 0;
+		    }
+
+		    .navigation > ul > li.has-submenu:after
+		    {
+		        display: none;
+		    }
+	    }
+
+	}
+
+}
+
+/*** Aside sizes ***/
+
+// aside.left-panel.lg
+// {
+//     width: 250px;
+// }
+
+// aside.left-panel.lg + .content
+// {
+//     margin-left: 250px;
+// }
+
+
+
+
+
+/*****************************
+User
+*****************************/
+
+.user
+{
+    margin-bottom: 35px;
+    padding: 4px;
+    .user-name
+    {
+        font-size: 14px;
+
+        color: #616574;
+    }
+    img
+    {
+        height: 100px;
+        padding: 8px;
+
+        border: 1px solid @panel-default-border;
+        background: lighten(@gray-app, 2%);
+    }
+    .user-profile
+    {
+        display: inline-block;
+        .btn
+        {
+            font-size: 9px;
+
+            padding: 4px 8px;
+
+            color: #616574;
+            border: 1px solid @panel-default-border;
+            background-color: transparent;
+        }
+        i
+        {
+            font-size: 8px;
+            line-height: 0;
+
+            position: relative;
+            bottom: 4px;
+
+            margin-right: 2px;
+
+            color: @brand-success;
+        }
+        &:hover
+        {
+            .btn
+            {
+                color: @brand-danger;
+                background: white;
+            }
+            i
+            {
+                color: @brand-danger;
+            }
+        }
+    }
+}
+
+
+
+/*****************************
+Navigation
+*****************************/
+
+.navigation
+{
+    margin: 20px 0;
+}
+
+.navigation > ul > li
+{
+    position: relative;
+
+    letter-spacing: .25px;
+    text-transform: uppercase;
+}
+
+
+.navigation > ul > li.has-submenu:after
+{
+    font-family: 'FontAwesome';
+
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    display: inline-block;
+    visibility: hidden;
+
+    content: '\f105';
+    -webkit-transition: all .4s;
+       -moz-transition: all .4s;
+         -o-transition: all .4s;
+            transition: all .4s;
+}
+
+.navigation > ul > li.active.has-submenu:after,
+.navigation > ul > li.has-submenu:hover:after
+{
+    color: black;
+}
+
+
+
+.navigation > ul > li > a
+{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 19px;
+
+    display: block;
+
+    padding: 16px 25px;
+
+    -webkit-transition: all .4s;
+       -moz-transition: all .4s;
+         -o-transition: all .4s;
+            transition: all .4s;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: @text-color;
+    border-bottom: 1px solid @panel-default-border;
+    border-left: 5px solid transparent;
+}
+
+.navigation > ul:hover > li.active > a
+{
+    color: #7a7e8a;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.navigation > ul > li:hover > a,
+.navigation > ul > li.active:hover > a,
+.navigation > ul > li.active > a
+{
+    color: @red-app;
+    border-left: 5px solid @red-app;
+    background: lighten(@gray-app, 3%);
+}
+
+.navigation ul li a i
+{
+    font-size: 16px;
+
+    margin-right: 6px;
+}
+
+
+
+/*** Sub Menu ***/
+.navigation ul li ul
+{
+    display: none;
+
+    background-color: darken(@gray-app,4%);
+}
+
+
+aside:not(.collapsed) .navigation ul li.active ul
+{
+    display: block;
+}
+
+.navigation ul li ul li a
+{
+    font-size: 12px;
+
+    display: block;
+
+    padding: 8px 25px;
+
+    -webkit-transition: all .2s;
+       -moz-transition: all .2s;
+         -o-transition: all .2s;
+            transition: all .2s;
+    text-align: left;
+    white-space: nowrap;
+    text-decoration: none;
+
+    color: @gray-light;
+    border-left: 5px solid transparent;
+}
+
+.navigation ul li ul li a:hover,
+.navigation ul li ul li.active a
+{
+    color: lighten(@red-app, 10%);
+    border-left: 5px solid @gray-light;
+}
+
+
+
+
+/*** Aside Collapsed Sub Menu ***/
+@media (min-width: 768px)
+{
+    aside.left-panel.collapsed .navigation ul li ul
+    {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 100%;
+
+        min-width: 200px;
+        padding: 10px 0;
+
+        border: 1px solid #ddd;
+        background-color: @gray-app;
+        box-shadow: none;
+    }
+
+    aside.left-panel.collapsed .navigation ul li ul:before
+    {
+        position: absolute;
+        top: 22px;
+        right: 100%;
+
+        display: block;
+
+        width: 20px;
+        height: 20px;
+
+        content: '';
+        cursor: pointer;
+
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent @gray-app transparent transparent;
+    }
+
+    aside.left-panel.collapsed .navigation > ul > li:hover > ul
+    {
+        display: block !important;
+    }
+
+
+    aside.left-panel.collapsed .navigation ul li ul li a
+    {
+        border: 0;
+        border-bottom: 1px solid lighten(@panel-default-border, 2%);
+        &:hover
+        {
+            color: @brand-danger;
+        }
+    }
+}
+
+
+
+/*****************************
+Top Header
+*****************************/
+
+
+@media (min-width:@screen-sm-min)
+{
+    .navbar-toggle
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+
+        width: 75px;
+        height: 75px;
+        margin-top: 35px;
+        margin-top: 15px;
+        padding: 8px;
+
+        text-align: center;
+    }
+}
+
+
+
+
+
+/*** Nav Toolbar (right)***/
+
+header .navbar-default .navbar-nav > li > a
+{
+    color: #b3b3be;
+}
+
+
+/*** Nav Toolbar (right)***/
+
+.nav-toolbar
+{
+    float: right;
+
+    margin: 12px 0;
+}
+
+.nav-toolbar > li
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin-left: 5px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-toolbar > li > a
+{
+    font-size: 14px;
+
+    display: block;
+
+    width: 30px;
+    height: 30px;
+    padding: 8px 0;
+
+    text-align: center;
+
+    color: #d3d3db;
+    border: 1px solid @panel-default-border;
+    border-radius: 30px;
+    i
+    {
+        display: block;
+    }
+}
+
+.nav-toolbar > li > a:hover
+{
+    color: @red-app;
+    border: 1px solid @red-app;
+}
+
+
+.nav-toolbar .dropdown-menu.panel
+{
+    padding-top: 0;
+    padding-bottom: 0;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .176);
+}
+
+
+
+/*****************************
+Content Area (right)
+*****************************/
+
+.content
+{
+    margin-left: 230px;
+}
+
+.content > .container-fluid
+{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+.wrapper
+{
+    min-height: 550px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+/****Dashboard Stats****/
+
+.dashboard-stats.panel
+{
+    position: relative;
+
+    margin-bottom: 30px;
+    padding: 20px;
+
+    cursor: pointer;
+}
+
+.dashboard-stats i.fa.stats-icon
+{
+    font-size: 40px;
+
+    z-index: 1;
+
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+
+    text-align: center;
+
+    color: #fff;
+}
+
+
+.dashboard-stats.rounded i.fa.stats-icon
+{
+    border-radius: 50px;
+}
+
+
+
+.dashboard-stats h3
+{
+    margin-top: 14px;
+
+    text-align: center;
+}
+.dashboard-stats p
+{
+    text-align: center;
+}
+
+.panel-dashboard
+{
+    min-height: 180px;
+    max-height: 180px;
+}
+
+
+
+
+
+
+/**** Side Panel ****/
+.panel-body > .side-panel,
+.side-panel,
+.group-panel
+{
+    overflow: hidden;
+
+    height: 205px;
+
+    outline: none;
+}
+
+.group-panel
+{
+    height: 400px;
+}
+
+.side-panel > li
+{
+    margin: 0;
+
+    border: 0;
+    border-bottom: 1px dashed #e0e0e0;
+    border-radius: 0;
+}
+
+
+.btn-circle,
+.form-control-circle,
+.btn-group .btn-circle:first-child:not(:last-child):not(.dropdown-toggle)
+{
+    border-radius: 50px;
+}
+
+
+/****************************************
+=========================================
+Responsive Stying
+=========================================
+*****************************************/
+
+@media (max-width: 768px)
+{
+    aside.left-panel.collapsed
+    {
+        left: 0;
+
+        overflow: hidden !important;
+
+        width: 250px;
+    }
+
+    aside.left-panel.collapsed + .content
+    {
+        margin-left: 0;
+
+        -moz-transition: translate3d(250px, 0px, 0px);
+          -o-transition: translate3d(250px, 0px, 0px);
+        -webkit-transform: translate3d(250px, 0px, 0px);
+            -ms-transform: translate3d(250px, 0px, 0px);
+                transform: translate3d(250px, 0px, 0px);
+    }
+
+
+
+    aside.left-panel
+    {
+        left: 100%;
+    }
+
+    section.content
+    {
+        margin-left: 0;
+    }
+
+    .content > .container-fluid
+    {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .page-header h1
+    {
+        margin-top: 0;
+    }
+}
+
+
+
+
+
+@media (max-width: 450px)
+{
+    .dropdown-menu
+    {
+        min-width: 280px !important;
+    }
+
+    .messages-dropdown
+    {
+        right: -80px !important;
+    }
+
+    .messages-dropdown.arrow.arrow-top-right:after
+    {
+        right: 85px;
+    }
+    .messages-dropdown.arrow.arrow-top-right:before
+    {
+        right: 84px;
+    }
+
+    .notifications
+    {
+        right: -40px !important;
+    }
+
+    .notifications.arrow.arrow-top-right:after
+    {
+        right: 45px;
+    }
+    .notifications.arrow.arrow-top-right:before
+    {
+        right: 44px;
+    }
+}
+
+span.mandatory,
+.error
+{
+    color: @brand-danger;
+}
+
+.no-border
+{
+    border: none;
+}

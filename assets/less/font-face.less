@@ -1,0 +1,20 @@
+.include-custom-font(@family: Arial, @fontfile: arial, @weight: normal, @style: normal){
+    @font-face{
+        font-family: @family;
+        src:url('../fonts/opensans/@{fontfile}.eot');
+        src:url('../fonts/opensans/@{fontfile}.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/opensans/@{fontfile}.woff') format('woff'),
+            url('../fonts/opensans/@{fontfile}.ttf') format('truetype'),
+            url('../fonts/opensans/@{fontfile}.svg#icon') format('svg');
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
+
+.include-custom-font('OpenSansBold',opensans-bold,bold,normal);
+.include-custom-font('OpenSansRegular',opensans-regular,normal,normal);
+.include-custom-font('OpenSansItalic',opensans-italic,normal,normal);
+.include-custom-font('OpenSansSemiboldRegular',opensans-semibold,normal,italic);
+// .include-custom-font('OpenSansExtraboldRegular',opensans-extrabold,normal,italic);
+.include-custom-font('OpenSansLightRegular',opensans-light,normal,normal);
+.include-custom-font('OpenSansLightItalic',opensans-lightitalic,normal,italic);

@@ -1,0 +1,239 @@
+.dashboard .container-fluid
+{
+    margin: 0 45px;
+    padding: 0;
+
+
+	// Give the last child padding
+	// to make it align with other elements
+	// for destop and above devices only
+	@media (min-width:@screen-md-min) {
+			
+	    .nav.navbar-nav li:last-child a {
+		    padding-right: 15px;
+		}
+	}
+}
+
+.dashboard-footer
+{
+    padding: 15px 30px 15px;
+	margin-top: 60px;
+    color: gray;
+    background: @brand-gray;
+}
+
+// ================================
+// Top Navigation for Dashboard
+// ================================
+.nav.navbar-nav.dashboard-nav li a {
+    font-size: 13px;
+
+    padding: 20px;
+
+	i {
+	    font-size: 1.2em;
+
+	    height: 32px;
+	    padding: 8px 0 0;
+	}
+	.badge {
+	    font-size: 10px;
+
+	    position: absolute;
+	    top: 16px;
+	    right: 8px;
+
+	    width: 18px;
+	    height: 18px;
+	    margin: 0;
+	    padding: 4px;
+
+	    border: 1px solid white;
+	}
+
+}
+
+// ================================
+// Portlets
+// ================================
+
+// Place everything in a link
+// to make it easier to click
+@portlet-height: 180px;
+@portlet-mb : 30px;
+// @portlet-padding : 30px;
+// 
+// Colors
+
+@portlet-purple: #8e44ad;
+@portlet-red: 	 #c0392b;
+@portlet-gray:  #7f8c8d;
+@portlet-yellow: #f1c40f;
+@portlet-black: #2c3e50;
+@portlet-orange: #e67e22;
+@portlet-green: #16a085;
+@portlet-blue: #2980b9;
+	
+
+// Mixins
+.portlet-color(@color){
+	& a{
+		background: @color;
+	}
+	&.portlet-big a{
+	 	background: fade(@color,70%);
+	}
+	
+}
+
+
+.portlet{
+
+	a {
+	    position: relative;
+
+	    display: block;
+	    overflow: hidden;
+	    text-decoration: none;
+
+	    height: @portlet-height;
+	    max-height: @portlet-height;
+	    margin-bottom: @portlet-mb;
+	    padding: floor(@portlet-height / 6);
+
+	    transition: all .5s ease;
+
+	    color: white;
+	    background: @brand-primary;
+
+	    &:hover{
+
+	    	background: @brand-secondary !important;
+	    	span.number{
+	    		opacity: .8;
+	    	}
+	    }
+		
+		// Icons
+	    i{
+	    	font-size: 2em;
+	    }
+
+	    // Text
+	    h3 {
+		    font-family: @font-text;
+		    font-size: 1.5em;
+		    font-weight: 300;
+
+		    margin: 0;
+		    padding-top: 60px;
+
+		    color: white;
+		}
+
+		// Additional Text
+		span{
+			font-size: 1em;
+			font-weight: 300;
+
+			&.number{
+				float:right;
+				opacity: 0.3;
+			}
+		}
+	}
+
+
+
+		
+
+	// Big Portlets
+	&.portlet-big{
+		a {
+			@portlet-height-big: (2 * @portlet-height) + @portlet-mb;
+		    height: @portlet-height-big;
+		    max-height: @portlet-height-big;
+	   		padding: floor(@portlet-height-big / 9);
+		    // padding: (1.5 * @portlet-padding);
+	    	background: fade(@brand-primary, 70%);
+		
+
+			&:hover{
+				background: fade(@brand-secondary,70%) !important;
+			}
+			
+			// Big Icons
+		    i{
+		    	font-size: 4em;
+		    }
+		    // Text
+		    h3 {
+		    	font-size: 2em;
+		    	padding-top: @portlet-height-big / 2;
+		    }
+		}
+	}
+
+	// Portlet Colors
+
+	&.portlet-purple{
+		.portlet-color(@portlet-purple);
+	}
+	&.portlet-red{
+		.portlet-color(@portlet-red);
+	}
+	&.portlet-gray{
+		.portlet-color(@portlet-gray);
+	}
+	&.portlet-yellow{
+		.portlet-color(@portlet-yellow);
+	}
+	&.portlet-black{
+		.portlet-color(@portlet-black);
+	}
+	&.portlet-orange{
+		.portlet-color(@portlet-orange);
+	}
+	&.portlet-green{
+		.portlet-color(@portlet-green);
+	}
+	&.portlet-blue{
+		.portlet-color(@portlet-blue);
+	}
+}
+
+table
+{
+    a
+    {
+        color: @text-color;
+        &:hover
+        {
+            color: @brand-danger;
+        }
+    }
+}
+
+.small-link
+{
+    font-size: 10px;
+
+    display: inline-block;
+
+    margin-right: 20px;
+
+    color: @text-color;
+    &:hover
+    {
+        color: @brand-danger;
+    }
+}
+
+
+.page-title
+{
+    line-height: 32px;
+
+    margin-bottom: 0;
+}

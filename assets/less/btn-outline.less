@@ -1,0 +1,45 @@
+.create-btn-outline(@outline-color){
+	color: @outline-color;
+	border-color: @outline-color;
+
+	&:hover{
+		background: @outline-color;
+		color: white;
+	}
+}
+
+.btn-outline{
+  		// font-family: @font-family-sans-serif;
+  		font-weight: 700;
+		text-transform: uppercase;
+		background: transparent;
+		color: inherit;
+    	transition: all .5s;
+    	border: 2px solid transparent;
+    	border-radius: 2px;
+    	text-shadow: none;
+
+	&.btn-default{
+		.create-btn-outline(@brand-secondary);
+	}
+	&.btn-primary{
+		.create-btn-outline(@brand-primary);	
+	}
+
+	&.btn-success{
+		.create-btn-outline(@brand-success);	
+	}
+
+	&.btn-info{
+		.create-btn-outline(@brand-info);	
+	}
+	&.btn-warning{
+		.create-btn-outline(@brand-warning);	
+	}
+
+	&.btn-danger, &.btn.current{
+		.create-btn-outline(@brand-danger);	
+	}
+}
+
+

@@ -1,0 +1,108 @@
+/*													 	 events ^
+--------------------------------------------------------------*/
+
+.events {
+	position: relative;
+	padding-left: 66px;	
+	border-bottom: 1px dashed #dee1e2;
+	padding-bottom:10px;
+	margin-bottom: 10px;
+	min-height: 80px;
+
+	&.events-page{
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+
+	&.no-border{
+		border:none;
+
+	}
+}
+
+
+.calendar {
+	width: 53px;
+
+	position: absolute;
+	top: 2px;		
+	left: 0; 
+
+	margin-bottom: 30px;
+	padding: 1px;
+
+	.date {
+		height: 44px;
+
+		text-align: center;
+		line-height: 1.6;
+		font-size: 15px;
+		background: @brand-gray-bg;
+		border: 1px solid darken(@brand-gray-bg, 5%);
+		.border-top-radius(2px);
+
+		span{
+		  font-size: 10px;
+		  line-height: 11px;
+		  display: block;
+		  padding-top: 7px;
+		}
+	}
+
+	.year {
+		height: 16px;
+
+		background: @nav-background;
+		
+		border-radius: 1px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+		text-align: center;
+		padding-top:2px;
+		line-height: 11px;
+		font-size: 10px;
+		color: #ddd;
+
+		.border-bottom-radius(2px); 
+	}
+}
+
+
+
+h3.events-title {
+	padding: 5px 0 0;
+	font-size: 12px;
+	line-height: 1.6;
+	margin: 5px 0 2px;
+	font-weight: bold;
+
+	&.big{
+		font-size: 14px;
+	}
+	a {
+		color: @text-color;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		&:hover{
+			color: @brand-red; 
+			text-decoration:none;
+		}
+	}
+}
+
+.events-date{
+	font-size: 11px;
+	line-height: 1.6;
+	margin: 5px 0;
+	color: @brand-gray;
+}
+
+.events-venue {
+
+}
+
+.events-link {
+	font-size: 11px;
+	margin-top: -5px;
+}
